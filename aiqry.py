@@ -71,5 +71,5 @@ if __name__ == "__main__":
         print("Usage: python script.py <model_name>")
         sys.exit(1)
 
-    q = sys.argv[1]
+    q = ' '.join(sys.argv[1:])
     send_request_and_process_response(q)

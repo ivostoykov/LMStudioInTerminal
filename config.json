@@ -1,9 +1,9 @@
 {
-    "url": "http://localhost:1234/v1/chat/completions"
-    "headers": {"Content-Type": "application/json"}
+    "url": "http://localhost:1234/v1/chat/completions",
+    "headers": {"Content-Type": "application/json"},
     "data": {
-        "messages": [{"role": "user", "content": q}],
+        "messages": [{"role": "user", "content": null}],
         "max_tokens": 1024,
-        "stream": True
+        "stream": true
     }
 }
