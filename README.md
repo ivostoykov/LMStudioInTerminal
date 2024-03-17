@@ -39,8 +39,26 @@ If you want to use it immediately in the same terminal you should manually execu
 source ~/.bashrc
 ```
 
+## Configuration
+
+The configuration file is expected to be `config.json`.
+
+**Using the Default Configuration:**
+
+If you're using the default LM Studio configuration, you don't need to modify the `url` value.
+
+**Custom Configuration:**
+
+* **`url`:** Change this value according to your specific settings if you're not using the default LM Studio configuration.
+* **`headers`:** This key is in JSON format and should not be modified for now.
+* **`messages`:** This mandatory key and its subkeys (`role`, `content`) should not be changed. You can adjust the `role` value, but any changes to the content value must be reflected in the Python script as well.
+* **`max_tokens` (Optional):** This key defines the maximum number of tokens allowed in a response. The default value is 1024. You can modify this value if needed.
+* **`stream`:** As LM Studio streams the generated AI response by default, this key and its value (`true`) should not be changed.
+
+
 ## Use
-In a terminal (Ctrl+Alt+T) type your question prefixed with `ai `:
+1. Ensure LM Studio server is started.
+2. In a terminal (Ctrl+Alt+T) type your question prefixed with `ai `:
 ```
 ai Tell me who you are.
 ```
