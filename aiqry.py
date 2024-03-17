@@ -44,17 +44,26 @@ def process_line(line):
     sys.stdout.write(choice_content)
     sys.stdout.flush()
 
-def send_request_and_process_response(q):
-    url = "http://localhost:1234/v1/chat/completions"
-    headers = {"Content-Type": "application/json"}
-    data = {
-        "messages": [{"role": "user", "content": q}],
-        "max_tokens": 1024,
-        "stream": True
-    }
-
+def load_config():
     try:
-        response = requests.post(url, headers=headers, data=json.dumps(data), stream=True)
+        with open('config.json', 'r') as config_file:
+            return json.load(config_file)
+    except Exception as e:
+        print(f"Error loading config: {e}")
+        return None
+
+def send_request_and_process_response(q):
+
+    config = load_config()
+    # Exit the function if the config could not be loaded
+    if config is None:
+        return
+
+    # Insert the dynamic content into the messages
+    config['data']['messages'][0]['content'] = q
+    
+    try:
+        response = requests.post(config['url'], headers=config['headers'], data=json.dumps(config['data']), stream=True)
     except requests.exceptions.RequestException as e:
         print(f"Request error: {e}")
         return
