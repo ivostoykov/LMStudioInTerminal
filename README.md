@@ -15,7 +15,7 @@ or
 
 1. Clone this repository:
 ```git clone https://github.com/ivostoykov/LMStudioInTerminal.git```
-2. (Optional) Under Linux Bash, open a terminal, make `setup.sh` executable by running:
+3. (Optional) Under Linux Bash, open a terminal, make `setup.sh` executable by running:
 ```chmod +x setup.sh```
 Then execute it:
 ```./setup.sh /path/to/location/of/aiqry.py```
