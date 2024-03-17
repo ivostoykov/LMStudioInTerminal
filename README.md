@@ -39,7 +39,7 @@ If you want to use it immediately in the same terminal you should manually execu
 source ~/.bashrc
 ```
 
-## Usa
+## Use
 In a terminal (Ctrl+Alt+T) type your question prefixed with `ai `:
 ```
 ai Tell me who you are.
