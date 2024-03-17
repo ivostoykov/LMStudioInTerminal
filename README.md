@@ -62,8 +62,7 @@ If you're using the default LM Studio configuration, you don't need to modify th
 ```
 ai Tell me who you are.
 ```
-![Screencast from 17-03-24 15 50 41](https://github.com/ivostoykov/LMStudioInTerminal/assets/889184/651b178f-2235-4a1d-9582-9f9c42856e70)
-
+![Screencast](https://github.com/ivostoykov/LMStudioInTerminal/assets/889184/c8724be7-31ae-4727-a88d-4c23d28ec125)
 
 
 ## Other
