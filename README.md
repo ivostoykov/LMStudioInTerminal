@@ -38,7 +38,7 @@ If you want to use it immediately in the same terminal you should manually execu
 ```
 source ~/.bashrc
 ```
-3.1 If you prefer, you can edit the ~/.bashrc directly: Open the file
+3.1 If you prefer, you can edit the `~/.bashrc` directly: Open the file
 ```
 nano ~/.bashrc
 ```
