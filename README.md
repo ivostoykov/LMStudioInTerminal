@@ -38,6 +38,15 @@ If you want to use it immediately in the same terminal you should manually execu
 ```
 source ~/.bashrc
 ```
+3.1 If you prefer, you can edit the ~/.bashrc directly: Open the file
+```
+nano ~/.bashrc
+```
+Add the following line somewhere:
+```
+ai() { python3 full/path/to/aiqry.py "$@"; }
+```
+Save the file.
 
 ## Configuration
 
@@ -50,9 +59,9 @@ If you're using the default LM Studio configuration, you don't need to modify th
 **Custom Configuration:**
 
 * **`url`:** Change this value according to your specific settings if you're not using the default LM Studio configuration.
-* **`headers`:** This key is in JSON format and should not be modified for now.
-* **`messages`:** This mandatory key and its subkeys (`role`, `content`) should not be changed. You can adjust the `role` value, but any changes to the content value must be reflected in the Python script as well.
-* **`max_tokens` (Optional):** This key defines the maximum number of tokens allowed in a response. The default value is 1024. You can modify this value if needed.
+* **`headers`:** This is the server response format (default JSON) and should not be modified for now.
+* **`messages`:** This mandatory key and its subkeys (`role`, `content`) names should not be changed. You can adjust the `role` value.
+* **`max_tokens`:** This key defines the maximum number of tokens allowed in a response. The default value is 1024. You can modify this value if needed.
 * **`stream`:** As LM Studio streams the generated AI response by default, this key and its value (`true`) should not be changed.
 
 
