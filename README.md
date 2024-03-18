@@ -73,6 +73,8 @@ ai Tell me who you are.
 ```
 ![Screencast](https://github.com/ivostoykov/LMStudioInTerminal/assets/889184/b7710e7e-575d-461b-9a43-2df50d3578bf)
 
+## Note
+Note that this involves bash (or your chosen shell), which has certain restrictions, such as the use of brackets, quotes, etc. Typically, it's not required to quote text following `ai`, but should you face any issues, consider enclosing the text in quotes not present within the text itself, or escape characters with a backslash (`\`).
 
 ## Other
 This software is provided as-is. Please ensure it is not harmful to your system. Check it carefully before use. Always use third-party software with caution.
