@@ -27,7 +27,11 @@ git clone https://github.com/ivostoykov/LMStudioInTerminal.git
 ```
 chmod +x setup.sh
 ```
-Then execute it:
+These files must be in the same directory, if you decide to move it somewhere:
+* aiqry.py
+* config.json
+
+If moved then execute:
 ```
 ./setup.sh /path/to/location/of/aiqry.py
 ```
