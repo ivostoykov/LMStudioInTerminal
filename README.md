@@ -4,7 +4,8 @@ This is a small project I created for fun and to facilitate the use of local AI 
 
 ## Prerequisites
 
-This project requires LM Studio. Please follow the instructions on how to install and download GGUF of your choice at [LM Studio](https://lmstudio.ai/). LM Studio provides a server that can be used to query the running AI instance.
+For this project, you'll need [LM Studio](https://lmstudio.ai/). It has Appimage (Linux), meaning you don't have to install it. Just download, make it executable, and run.
+Once it's all set, there's a search page where you can look through the models available and pick the one you want to download. Download preferred GGUF from the list. Load the model and start the server LM Studio provides ensuring there are no errors, and you're good to go.
 
 Python is also required. Check it:
 ```
@@ -14,6 +15,7 @@ or
 ```
 python --version
 ```
+With [LM Studio](https://lmstudio.ai/) and python ready continue with the next step:
 
 ## Installation
 
