@@ -1,6 +1,7 @@
 import requests
 import json
 import sys
+import os
 
 def process_line(line):
     global concatenated_content
@@ -46,7 +47,9 @@ def process_line(line):
 
 def load_config():
     try:
-        with open('config.json', 'r') as config_file:
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        config_path = os.path.join(dir_path, 'config.json')
+        with open(config_path, 'r') as config_file:
             return json.load(config_file)
     except Exception as e:
         print(f"Error loading config: {e}")
