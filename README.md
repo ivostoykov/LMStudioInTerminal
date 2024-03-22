@@ -66,7 +66,7 @@ If you're using the default LM Studio configuration, you don't need to modify th
 
 * **`url`:** Change this value according to your specific settings if you're not using the default LM Studio configuration.
 * **`headers`:** This is the server response format (default JSON) and should not be modified for now.
-* **`messages`:** This mandatory key and its subkeys (`role`, `content`) names should not be changed. You can adjust the `role` value.
+* **`messages`:** `null` by default, used to handle communication history
 * **`max_tokens`:** This key defines the maximum number of tokens allowed in a response. The default value is 1024. You can modify this value if needed.
 * **`stream`:** As LM Studio streams the generated AI response by default, this key and its value (`true`) should not be changed.
 
