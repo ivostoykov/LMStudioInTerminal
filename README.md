@@ -78,6 +78,7 @@ If you're using the default LM Studio configuration, you don't need to modify th
 ai Tell me who you are.
 ```
 ![Screencast](https://github.com/ivostoykov/LMStudioInTerminal/assets/889184/b7710e7e-575d-461b-9a43-2df50d3578bf)
+
 3. this will start a chat session
 
 ## Note
