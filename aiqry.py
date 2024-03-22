@@ -3,8 +3,12 @@ import json
 import sys
 import os
 
+messages = []
+streamContent = ''
+
 def process_line(line):
-    global concatenated_content
+    global streamContent
+    global messages
     # if line:
         # decoded_line = line.decode('utf-8').strip()
 
@@ -14,6 +18,7 @@ def process_line(line):
     
     json_data = line.split("ata: ", 1)[-1]
     if json_data.lower() == "[done]":
+        messages.append({"role": "assistant", "content": streamContent})
         sys.stdout.writelines("\n")
         sys.stdout.flush()
         return;
@@ -21,6 +26,7 @@ def process_line(line):
     try:
         stream_data = json.loads(json_data)
     except json.JSONDecodeError as e:
+        messages.append({"role": "assistant", "content": streamContent})
         print(f"\nError decoding JSON: {e};\nData: {json_data}")
         return
 
@@ -41,7 +47,7 @@ def process_line(line):
     if choice_content is None:
         return
 
-    # print(choice_content, end="")
+    streamContent += choice_content
     sys.stdout.write(choice_content)
     sys.stdout.flush()
 
@@ -57,14 +63,9 @@ def load_config():
 
 def send_request_and_process_response(q):
 
-    config = load_config()
-    # Exit the function if the config could not be loaded
     if config is None:
         return
 
-    # Insert the dynamic content into the messages
-    config['data']['messages'][0]['content'] = q
-    
     try:
         response = requests.post(config['url'], headers=config['headers'], data=json.dumps(config['data']), stream=True)
     except requests.exceptions.RequestException as e:
@@ -78,10 +79,27 @@ def send_request_and_process_response(q):
 
         process_line(line.decode('utf-8').strip())
 
+def append_message_and_send(config, message):
+    messages.append({"role": "user", "content": message})
+    config['data']['messages'] = messages
+    sys.stdout.write("\nAssistant:\n\t")
+    sys.stdout.flush()
+    send_request_and_process_response(config)
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python script.py <model_name>")
         sys.exit(1)
 
-    q = ' '.join(sys.argv[1:])
-    send_request_and_process_response(q)
+    config = load_config()
+    append_message_and_send(config, ' '.join(sys.argv[1:]))
+    
+    try:
+        while True:
+            user_input = input("\n\nUser (Ctrl+C to exit): ")
+            append_message_and_send(config, user_input)
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        sys.exit(0)
+
+
