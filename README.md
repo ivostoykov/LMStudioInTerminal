@@ -23,7 +23,7 @@ With [LM Studio](https://lmstudio.ai/) and python ready continue with the next s
 ```
 git clone https://github.com/ivostoykov/LMStudioInTerminal.git
 ```
-1.1 Alternatively, download the release [zip](https://github.com/ivostoykov/LMStudioInTerminal/releases/tag/v1.0.0) file and extract it into a folder of your choice.
+1.1 Alternatively, download the release [zip](https://github.com/ivostoykov/LMStudioInTerminal/releases/tag/v1.0.1) file and extract it into a folder of your choice.
 
 2. (Optional) Under Linux Bash, open a terminal, make `setup.sh` executable by running:
 ```
