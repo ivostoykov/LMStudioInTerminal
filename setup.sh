@@ -16,12 +16,12 @@ append_script_name_if_needed() {
   fi
 }
 
-# Process the input parameter
-raw_input_path="$1"
-script_path=$(append_script_name_if_needed "$raw_input_path")
-
-# Default to ./aiqry.py if script_path is empty
-script_path="${script_path:-"./aiqry.py"}"
+# Process the input parameter. If no parameter is provided, use the current directory's full path
+if [ -z "$1" ]; then
+  script_path="$(pwd)/aiqry.py"
+else
+  script_path=$(append_script_name_if_needed "$1")
+fi
 
 # Check if the script exists at the given path
 if [ -f "$script_path" ]; then
@@ -33,4 +33,3 @@ else
     # If the file does not exist, print an error message
     echo "Error: 'aiqry.py' not found at the specified location: $script_path"
 fi
-

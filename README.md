@@ -23,7 +23,9 @@ With [LM Studio](https://lmstudio.ai/) and python ready continue with the next s
 ```
 git clone https://github.com/ivostoykov/LMStudioInTerminal.git
 ```
-3. (Optional) Under Linux Bash, open a terminal, make `setup.sh` executable by running:
+1.1 Alternatively, download the release [zip](https://github.com/ivostoykov/LMStudioInTerminal/releases/tag/v1.0.0) file and extract it into a folder of your choice.
+
+2. (Optional) Under Linux Bash, open a terminal, make `setup.sh` executable by running:
 ```
 chmod +x setup.sh
 ```
@@ -44,7 +46,7 @@ If you want to use it immediately in the same terminal you should manually execu
 ```
 source ~/.bashrc
 ```
-3.1 If you prefer, you can edit the `~/.bashrc` directly: Open the file
+2.1 If you prefer, you can edit the `~/.bashrc` directly: Open the file
 ```
 nano ~/.bashrc
 ```
