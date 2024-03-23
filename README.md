@@ -2,6 +2,9 @@
 
 This is a small project I created for fun and to facilitate the use of local AI everywhere I need it.
 
+### Purpuse
+This is a terminal assistant, not a replacement for LM Stidio, Jan, or LlamaFile. It lets you ask AI questions without switching windows. While it supports longer sessions where you can ask continuous questions, remember that the usual terminal limitations still apply.
+
 ## Prerequisites
 
 For this project, you'll need [LM Studio](https://lmstudio.ai/). It has Appimage (Linux), meaning you don't have to install it. Just download, make it executable, and run.
