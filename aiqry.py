@@ -3,8 +3,9 @@ import json
 import sys
 import os
 import platform
+import datetime
 
-messages = [{"role": "system", "content": f"Unless prompted otherwise, when needed and related, assume this OS: {platform.uname()}"}]
+messages = [{"role": "system", "content": f"Local date and time is {datetime.datetime.now()}.Unless prompted otherwise, when needed and related, assume this OS: {platform.uname()}"}]
 streamContent = ''
 
 def process_line(line):
