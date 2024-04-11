@@ -2,8 +2,9 @@ import requests
 import json
 import sys
 import os
+import platform
 
-messages = []
+messages = [{"role": "system", "content": f"Unless prompted otherwise, when needed and related, assume this OS: {platform.uname()}"}]
 streamContent = ''
 
 def process_line(line):
